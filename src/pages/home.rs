@@ -29,12 +29,13 @@ pub fn home() -> Html {
     html! {
         <div>
             <h1>{ "Random Hat 🎩" } </h1>
+            <hr/>
             <p> { "A random name generator for selecting FASLIP nominees each week."} </p>
             <h3> { "Click the big hat icon to (psuedo) randomly select a speaker for next week!" } </h3>
             <button onclick={onclick}> <h1> { "🎩" } </h1> </button>
             <h1> {selected_student.to_string()}</h1>
             <button onclick={reset}>{"Reset"}</button>
-            <p></p>
+            <hr/>
             <button onclick={see_students}>{"See FASLIP students"}</button>
         </div>
     }
