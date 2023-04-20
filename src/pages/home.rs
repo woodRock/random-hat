@@ -1,30 +1,34 @@
 use crate::routes::Route;
-/// Home - home.rs
-/// ==============
-/// This is the home page. It is the first page that the user sees when they visit the website.
+use crate::models::student::{Student,STUDENTS_JSON};
+
 use yew::prelude::*;
 use yew_router::prelude::*;
-// use log::info;
-
 use yew::{html, Callback};
 
 #[function_component(Home)]
 pub fn home() -> Html {
-    let history = use_history().unwrap();
-    let see_students = Callback::once(move |_| history.push(Route::Students));
 
     const DEFAULT: &str = "???";
-    const SUPER_RANDOM_STUDENT: &str = "Jordan MacLachlan: Evolutionary Computation for Emergency Medical Services Routing";
-
     let selected_student = use_state(|| String::from(DEFAULT));
-    let onclick = {
+
+    let mut students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
+
+    let index = (rand::random::<f32>() * students.len() as f32).floor() as usize;
+    let selected = students.remove( index );
+    let super_random_student: String = format!("{}: {}", selected.name, selected.topic).to_string();
+
+    let select_random_student = {
         let selected_student = selected_student.clone();
-        Callback::from(move |_| selected_student.set(String::from(SUPER_RANDOM_STUDENT)))
+        Callback::once(move |_| selected_student.set(String::from(super_random_student)))
     };
+
     let reset = {
         let selected_student = selected_student.clone();
         Callback::from(move |_| selected_student.set(String::from(DEFAULT)))
     };
+
+    let history = use_history().unwrap();
+    let see_students = Callback::once(move |_| history.push(Route::Students));
 
     html! {
         <div>
@@ -32,7 +36,7 @@ pub fn home() -> Html {
             <hr/>
             <p> { "A random name generator for selecting FASLIP nominees each week."} </p>
             <h3> { "Click the big hat icon to (psuedo) randomly select a speaker for next week!" } </h3>
-            <button onclick={onclick}> <h1> { "🎩" } </h1> </button>
+            <button onclick={select_random_student}> <h1> { "🎩" } </h1> </button>
             <h1> {selected_student.to_string()}</h1>
             <button onclick={reset}>{"Reset"}</button>
             <hr/>

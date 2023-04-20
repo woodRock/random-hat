@@ -13,6 +13,14 @@ categories = ["wasm"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# source: https://docs.rs/getrandom/latest/getrandom/#webassembly-support
+# To enable the js Cargo feature, add the following to the 
+# dependencies section in your Cargo.toml file:
+getrandom = { version = "0.2", features = ["js"] }
+
+# Random number generator (see https://docs.rs/rand/latest/rand/)
+rand = "0.8.5"
+
 # Yew provides a react-like web application framework (see https://yew.rs/)
 yew = "^0.19"
 # The default router for SPA made using yew. (see https://yew.rs/docs/concepts/router)

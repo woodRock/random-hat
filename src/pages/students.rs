@@ -1,5 +1,4 @@
-use crate::models::student::Student;
-use crate::models::student::STUDENTS_JSON;
+use crate::models::student::{Student,STUDENTS_JSON};
 use crate::components::return_home::ReturnHome;
 
 use yew::prelude::*;
@@ -27,7 +26,6 @@ fn student_list(StudentsListProps { students }: &StudentsListProps) -> Html {
 pub fn students() -> Html {
 
     let students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
-    println!("{:?}", students);
 
     html! {
         <>            
