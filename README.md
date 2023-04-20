@@ -1,9 +1,9 @@
-# Doomerism
+# Random Hat
 
 [![CI](https://github.com/woodRock/doomerism/actions/workflows/ci.yml/badge.svg)](https://github.com/woodRock/doomerism.github.io/actions/workflows/ci.yml)
 [![gh pages](https://github.com/woodRock/doomerism/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/woodRock/doomerismactions/workflows/pages/pages-build-deployment)
 
-Are you a doomer? Find out in this bare mininium 1980s-ish HTML website.
+A web application written in rust to pick the next speaker for [FASLIP](https://ecs.wgtn.ac.nz/Groups/ECRG/FASLIP_Home).
 
 ## Rust Frontend
 
@@ -74,7 +74,13 @@ Note: the `Trunk.toml` file contains the configuration for the trunk utility.
 
 ## Build
 
-Build the application using `trunk build` and specify the `--release` tag. This generates the deployment ready files in the `docs` directory.
+To quickly do all the stuff required to make a production build of the website, simply run: 
+
+```bash
+make
+```
+
+Alternatively, you can build the application using `trunk build` and specify the `--release` tag. This generates the deployment ready files in the `docs` directory.
 
 ```bash
 $ trunk build
