@@ -7,10 +7,7 @@ use yew_router::prelude::*;
 mod components;
 mod pages;
 mod routes;
-<<<<<<< HEAD
 mod models;
-=======
->>>>>>> 6345a0cba85677e4b142caa2251896a883202e9f
 
 use crate::routes::{switch, Route};
 

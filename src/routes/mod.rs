@@ -12,11 +12,8 @@ use yew_router::prelude::*;
 pub enum Route {
     #[at("/")]
     Home,
-<<<<<<< HEAD
     #[at("/Students")]
     Students,
-=======
->>>>>>> 6345a0cba85677e4b142caa2251896a883202e9f
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -27,10 +24,7 @@ pub enum Route {
 pub fn switch(routes: &Route) -> Html {
     match routes {
         Route::Home => html! {<pages::home::Home />},
-<<<<<<< HEAD
         Route::Students => html! { <pages::students::Students />},
-=======
->>>>>>> 6345a0cba85677e4b142caa2251896a883202e9f
         Route::NotFound => html! { <pages::error::Error />},
     }
 }
