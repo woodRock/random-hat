@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+}
+
+div {
+  margin-top: 35px;
+  text-align: center;
+  color: white;
+  font-family: Cubano;
+}
+
+p {
+  font-size: 1em;
+}
+
+button {
+  width: 10%;
+  height: 10%;
+  font-size: 1em;
+  font-family: Cubano;
+  color: white;
+  text-align: center;
+  background-color: #555555;
+  border-width: 8px;
+}
+
+/* Center the results table on the page */
+table {
+  margin-left: auto;
+  margin-right: auto;
+}

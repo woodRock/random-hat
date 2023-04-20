@@ -1,0 +1,34 @@
+[package]
+name = "website"
+version = "0.1.0"
+edition = "2021"
+description = "Single Page Application (SPA) built with Rust + WASM for Stardust Software NZ"
+authors = ["Jesse Wood <j.r.h.wood98@gmail.com>"]
+license = "MIT"
+homepage = "https://stardustsoftwarenz.github.io/"
+repository = "https://github.com/StardustSoftwareNZ/StardustSoftwareNZ.github.io"
+keywords = ["rust", "wasm", "SPA", "web-app"]
+categories = ["wasm"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Yew provides a react-like web application framework (see https://yew.rs/)
+yew = "^0.19"
+# The default router for SPA made using yew. (see https://yew.rs/docs/concepts/router)
+yew-router = "0.16"
+# A Rust library providing a lightweight logging facade. (See https://crates.io/crates/log)
+log = "0.4.6"
+# A logger that sends a message with its Rust source's line and filename to the browser console. (See https://crates.io/crates/wasm-logger)
+<<<<<<< HEAD
+wasm-logger = "0.2.0"
+# To use the serde crate in your Rust project, you need to add it as a dependency in your Cargo.toml file. Here's an example of what your Cargo.toml file might look like:
+serde_json = "1.0"
+
+# See https://yew.rs/docs/tutorial
+gloo-net = "0.2"
+serde = { version = "1.0", features = ["derive"] }
+wasm-bindgen-futures = "0.4"
+=======
+wasm-logger = "0.2.0"
+>>>>>>> 6345a0cba85677e4b142caa2251896a883202e9f
