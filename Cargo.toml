@@ -20,7 +20,6 @@ yew-router = "0.16"
 # A Rust library providing a lightweight logging facade. (See https://crates.io/crates/log)
 log = "0.4.6"
 # A logger that sends a message with its Rust source's line and filename to the browser console. (See https://crates.io/crates/wasm-logger)
-<<<<<<< HEAD
 wasm-logger = "0.2.0"
 # To use the serde crate in your Rust project, you need to add it as a dependency in your Cargo.toml file. Here's an example of what your Cargo.toml file might look like:
 serde_json = "1.0"
@@ -29,6 +28,3 @@ serde_json = "1.0"
 gloo-net = "0.2"
 serde = { version = "1.0", features = ["derive"] }
 wasm-bindgen-futures = "0.4"
-=======
-wasm-logger = "0.2.0"
->>>>>>> 6345a0cba85677e4b142caa2251896a883202e9f
