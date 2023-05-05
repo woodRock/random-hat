@@ -14,6 +14,6 @@ pub fn return_home() -> Html {
     let onclick = Callback::once(move |_| history.push(Route::Home));
 
     html! {
-        <button {onclick}>{ "🏠"}</button>
+        <button {onclick}>{ "Return home 🏠"}</button>
     }
 }

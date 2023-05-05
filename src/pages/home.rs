@@ -32,15 +32,26 @@ pub fn home() -> Html {
 
     html! {
         <div>
-            <h1>{ "Random Hat 🎩" } </h1>
+            <header>
+                <h1>{ "Random Hat 🎩" } </h1>
+            </header>
             <hr/>
-            <p> { "A random name generator for selecting FASLIP nominees each week."} </p>
-            <h3> { "Click the big hat icon to (psuedo) randomly select a speaker for next week!" } </h3>
-            <button onclick={select_random_student}> <h1> { "🎩" } </h1> </button>
-            <h1> {selected_student.to_string()}</h1>
-            <button onclick={reset}>{"Reset"}</button>
+            <div id="description">
+                <p> { "A random name generator for selecting FASLIP nominees each week."} </p>
+                <h3> { "Click the big hat icon to (psuedo) randomly select a speaker for next week!" } </h3>
+            </div>
+            <div id="actions">
+                <button onclick={select_random_student}> <h1> { "🎩" } </h1> </button>
+                <p> </p>
+                <button onclick={reset}> { "🔄" } </button>
+            </div>
+            <div id="selected-student">
+                <h1> {selected_student.to_string()}</h1>
+            </div>
             <hr/>
-            <button onclick={see_students}>{"See FASLIP students"}</button>
+            <footer>
+                <button onclick={see_students}>{"See FASLIP students"}</button>
+            </footer>
         </div>
     }
 }

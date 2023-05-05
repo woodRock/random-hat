@@ -28,17 +28,22 @@ pub fn students() -> Html {
     let students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
 
     html! {
-        <>            
-            <h3>{"FASLIP - Current Students"}</h3>
+        <>    
+            <header>       
+                <h1>{"FASLIP - Current Students"}</h1>
+            </header>
             <hr/>
-            <StudentsList students={students} />
-            <hr/>
-            <p> 
+            <div id="description"> 
                 {" List is from the "} 
                 <a href="https://ecs.wgtn.ac.nz/Groups/ECRG/FASLIP_Team#Current_Students">{ "ECRG FASLIP" }</a> 
                 { " website."}    
-            </p>
-            <ReturnHome />
+            </div>
+            <hr/>
+            <StudentsList students={students} />
+            <hr/>
+            <footer>
+                <ReturnHome />
+            </footer>
         </>
     }
 }
