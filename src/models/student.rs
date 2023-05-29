@@ -1,4 +1,4 @@
-// Students - student.rs 
+// Students - `student.rs`
 // =====================
 // This file defines the Student struct and a function to read the students from a JSON file.
 use serde::Deserialize;

@@ -1,5 +1,5 @@
 use crate::routes::Route;
-/// Navigation - navigation.rs
+/// Navigation - `navigation.rs`
 /// ==========================
 /// This is the navigation component. It is used to navigate between pages.
 use yew::prelude::*;

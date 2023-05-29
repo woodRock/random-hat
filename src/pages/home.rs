@@ -1,3 +1,4 @@
+// Home - `home.rs`
 use crate::routes::Route;
 use crate::models::student::{Student,read_students_from_json};
 
@@ -16,11 +17,11 @@ pub fn home() -> Html {
 
     let index = (rand::random::<f32>() * students.len() as f32).floor() as usize;
     let selected = students.remove( index );
-    let super_random_student: String = format!("{}: {}", selected.name, selected.topic).to_string();
+    let super_random_student: String = format!("{}: {}", selected.name, selected.topic);
 
     let select_random_student = {
         let selected_student = selected_student.clone();
-        Callback::once(move |_| selected_student.set(String::from(super_random_student)))
+        Callback::once(move |_| selected_student.set(super_random_student))
     };
 
     let reset = {

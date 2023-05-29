@@ -1,4 +1,4 @@
-/// Main - main.rs
+/// Main - `main.rs`
 /// ==============
 /// The entry point for the applicaiton, it runs the application and sets up the router.
 use yew::prelude::*;

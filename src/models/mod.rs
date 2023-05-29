@@ -1,4 +1,4 @@
-/// Models - mod.rs
+/// Models - `mod.rs`
 /// ===================
 ///
 /// TODO

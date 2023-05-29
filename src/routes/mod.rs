@@ -1,5 +1,5 @@
 use crate::pages;
-/// Routes - mod.rs
+/// Routes - `mod.rs`
 /// ===============
 /// We seperate the routing logic from the rest of the application.
 /// This file is like __init__.py in Python. It is the entry point for the module.

@@ -1,3 +1,4 @@
+// Students - `student.rs`
 use crate::models::student::{Student,read_students_from_json};
 use crate::components::return_home::ReturnHome;
 
@@ -26,7 +27,6 @@ fn student_list(StudentsListProps { students }: &StudentsListProps) -> Html {
 pub fn students() -> Html {
 
     let students: Vec<Student> = read_students_from_json();
-    // let students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
 
     html! {
         <>    
