@@ -1,5 +1,5 @@
 use crate::routes::Route;
-use crate::models::student::{Student,STUDENTS_JSON};
+use crate::models::student::{Student,read_students_from_json};
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -11,7 +11,8 @@ pub fn home() -> Html {
     const DEFAULT: &str = "???";
     let selected_student = use_state(|| String::from(DEFAULT));
 
-    let mut students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
+    let mut students: Vec<Student> = read_students_from_json();
+    // let mut students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
 
     let index = (rand::random::<f32>() * students.len() as f32).floor() as usize;
     let selected = students.remove( index );
