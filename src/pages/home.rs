@@ -1,6 +1,6 @@
 // Home - `home.rs`
 use crate::routes::Route;
-use crate::models::student::{Student,read_students_from_json};
+use crate::models::student::{Student,scrape_students};
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -12,14 +12,31 @@ pub fn home() -> Html {
     const DEFAULT: &str = "???";
     let selected_student = use_state(|| String::from(DEFAULT));
 
-    let mut students: Vec<Student> = read_students_from_json();
-    // let mut students: Vec<Student> = serde_json::from_str(STUDENTS_JSON).expect("failed to parse JSON");
-
-    let index = (rand::random::<f32>() * students.len() as f32).floor() as usize;
-    let selected = students.remove( index );
-    let super_random_student: String = format!("{}: {}", selected.name, selected.topic);
+    let students = use_state(|| vec![]);
+    {
+        let students = students.clone();
+        use_effect_with_deps(move |_| {
+            let students = students.clone();
+            wasm_bindgen_futures::spawn_local(async move {
+                let fetched_students = scrape_students().await;
+                students.set(fetched_students);
+            });
+            || () 
+        }, ());
+    }
 
     let select_random_student = {
+        // Check if the students have been fetched yet
+        if students.len() == 0 {
+            // If not, return an empty callback
+            return html! {
+                <h1> { "Loading..." } </h1>
+            };
+        }
+
+        let index = (rand::random::<f32>() * students.len() as f32).floor() as usize;
+        let selected = students.get( index ).unwrap();
+        let super_random_student: String = format!("{}: {}", selected.name, selected.topic);
         let selected_student = selected_student.clone();
         Callback::once(move |_| selected_student.set(super_random_student))
     };
@@ -49,6 +66,11 @@ pub fn home() -> Html {
             </div>
             <div id="selected-student">
                 <h1> {selected_student.to_string()}</h1>
+                <img class="big profile" src={
+                    format!("https://ecs.wgtn.ac.nz/foswiki/pub/Main/Grad{}/{}.jpg", 
+                    selected_student.split(":").next().unwrap().replace(" ", ""),
+                    selected_student.split(":").next().unwrap().replace(" ", "")
+                )} />
             </div>
             <hr/>
             <footer>

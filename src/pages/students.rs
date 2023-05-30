@@ -1,5 +1,5 @@
 // Students - `student.rs`
-use crate::models::student::{Student,read_students_from_json};
+use crate::models::student::{Student,scrape_students};
 use crate::components::return_home::ReturnHome;
 
 use yew::prelude::*;
@@ -13,7 +13,15 @@ struct StudentsListProps {
 #[function_component(StudentsList)]
 fn student_list(StudentsListProps { students }: &StudentsListProps) -> Html {
     let students = students.iter().map(|student| html! {
-        <p key={student.id}>{format!("{}: {}", student.name, student.topic)}</p>
+        <>
+            <p key={student.id}>{format!("{}: {}", student.name, student.topic)}</p>
+            // <img class="small profile" src={
+            //     format!("https://ecs.wgtn.ac.nz/foswiki/pub/Main/Grad{}/{}.jpg", 
+            //     student.name.replace(" ", ""),
+            //     student.name.replace(" ", "")
+            //     )
+            // }/>
+        </>
     }).collect::<Html>();
 
     html! {
@@ -26,7 +34,18 @@ fn student_list(StudentsListProps { students }: &StudentsListProps) -> Html {
 #[function_component(Students)]
 pub fn students() -> Html {
 
-    let students: Vec<Student> = read_students_from_json();
+    let students = use_state(|| vec![]);
+    {
+        let students = students.clone();
+        use_effect_with_deps(move |_| {
+            let students = students.clone();
+            wasm_bindgen_futures::spawn_local(async move {
+                let fetched_students = scrape_students().await;
+                students.set(fetched_students);
+            });
+            || () 
+        }, ());
+    }
 
     html! {
         <>    
@@ -40,7 +59,7 @@ pub fn students() -> Html {
                 { " website."}    
             </div>
             <hr/>
-            <StudentsList students={students} />
+            <StudentsList students={(*students).clone()} />
             <hr/>
             <footer>
                 <ReturnHome />

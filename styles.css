@@ -42,3 +42,18 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Profile picture style images for random hat page */
+.profile {
+  border-radius: 50%;
+}
+
+.big {
+  width: 300px;
+  height: 300px;
+}
+
+.small {
+  width: 50px;
+  height: 50px;
+}
