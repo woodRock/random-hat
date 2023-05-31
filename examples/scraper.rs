@@ -31,7 +31,6 @@ pub async fn scrape_students() -> Vec<Student> {
         .text()
         .await
         .unwrap();
-    print!("{}", response);
     let html_doc = ScraperHtml::parse_document(&response);
     let ul_selector = Selector::parse("#Current_Students + ul").unwrap();
     let ul = html_doc.select(&ul_selector).next().unwrap();
@@ -57,7 +56,7 @@ pub fn write_students_to_json(students: Vec<Student>) {
 }
 
 pub fn read_students_from_json() -> Vec<Student> {
-    let students_json = include_str!("../models/names.json");
+    let students_json = include_str!("../src/models/names.json");
     let students: Vec<Student> = serde_json::from_str(students_json).expect("failed to parse JSON");
     students
 }

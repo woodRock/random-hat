@@ -13,7 +13,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
       - name: "Scrape 🔥"
-        run: cargo r --bin scraper
+        run: cargo r --example scraper
+      - name: "🛠️ Build website"
+        run: make
       - name: "🛠️ Push changes to GitHub"
         run:
           git config --global user.email readme-bot@example.com && git config --global user.name readme-bot;
