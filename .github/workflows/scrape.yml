@@ -14,10 +14,9 @@ jobs:
       - name: "Scrape 🔥"
         run: cargo r --example scraper
       - name: "Build website 🛠️"
-        run:
-          - cargo install trunk
-          - rustup target add wasm32-unknown-unknown
-          - make
+        run: cargo install trunk;
+          rustup target add wasm32-unknown-unknown;
+          make;
       - name: "Push to GitHub 🚀"
         run:
           git config --global user.email readme-bot@example.com && git config --global user.name readme-bot;
