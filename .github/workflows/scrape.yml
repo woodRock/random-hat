@@ -23,4 +23,4 @@ jobs:
       - name: "Push to GitHub 🚀"
         run: |
           git config --global user.email readme-bot@example.com && git config --global user.name readme-bot;
-          git diff --quiet && git diff --staged --quiet || git commit -am '[BOT] Update Current Students' && git push;
+          git add -A && git commit -m '[BOT] Update Current Students' && git push;
