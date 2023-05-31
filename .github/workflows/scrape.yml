@@ -12,7 +12,6 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
-      - name: "Scrape currents students"
       - uses: actions/checkout@v2
       - run: cargo -r --bin scraper
 
