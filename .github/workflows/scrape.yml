@@ -1,4 +1,3 @@
-# in .github/workflows/ci.yml
 name: Scrape
 on:
   [push, pull_request]
