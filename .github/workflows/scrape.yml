@@ -3,10 +3,8 @@ name: Scrape
 
 on:
   [push, pull_request]
-  # push:
-  # pull_request:
-  # schedule:
-  #   - cron: "*/30 * * * *" # Runs every 30 minutes
+  schedule:
+    - cron: "*/30 * * * *" # Runs every 30 minutes
 
 jobs:
   scrape:

@@ -2,7 +2,6 @@
 // =====================
 // This file defines the Student struct and a function to read the students from a JSON file.
 use serde::{Deserialize,Serialize};
-use reqwasm::http::Request;
 
 #[derive(Clone, PartialEq,Debug, Deserialize, Serialize)]
 pub struct Student {
