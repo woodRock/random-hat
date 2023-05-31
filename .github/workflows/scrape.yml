@@ -2,10 +2,10 @@
 name: Scrape
 
 on:
-  [push, pull_request]
-  workflow_dispatch:
-  schedule:
-    - cron: "*/30 * * * *" # Runs every 30 minutes
+  - [push, pull_request]
+  - workflow_dispatch:
+      schedule:
+        - cron: "*/30 * * * *" # Runs every 30 minutes
 
 jobs:
   scrape:
