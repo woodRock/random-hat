@@ -2,10 +2,11 @@
 name: Scrape
 
 on:
-  push:
-  pull_request:
-  schedule:
-    - cron: "*/30 * * * *" # Runs every 30 minutes
+  [push, pull_request]
+  # push:
+  # pull_request:
+  # schedule:
+  #   - cron: "*/30 * * * *" # Runs every 30 minutes
 
 jobs:
   scrape:
