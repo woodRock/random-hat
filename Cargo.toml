@@ -12,6 +12,14 @@ categories = ["wasm"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "website"
+path = "src/main.rs"
+
+[[bin]]
+name = "scraper"
+path = "src/bin/scraper.rs"
+
 [dependencies]
 # source: https://docs.rs/getrandom/latest/getrandom/#webassembly-support
 # To enable the js Cargo feature, add the following to the 
@@ -34,8 +42,11 @@ wasm-logger = "0.2.0"
 serde_json = "1.0"
 
 serde = { version = "1.0", features = ["derive"] }
-wasm-bindgen-futures = "0.4"
 
+# For the scraper
+# Async main function for scraper - See https://docs.rs/tokio/latest/tokio/
+tokio = { version = "1", features = ["full"] }
+# HTTP requests not WASM - See https://docs.rs/crate/reqwest/latest
+reqwest = { version = "0.11", features = ["json"] }
 # Webscraping stuff - See https://www.makeuseof.com/rust-scraping-websites/
-reqwasm = "0.4.0"
 scraper = "0.12.0"

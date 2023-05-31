@@ -1,6 +1,6 @@
 // Home - `home.rs`
 use crate::routes::Route;
-use crate::models::student::{Student,scrape_students};
+use crate::models::student::{Student,read_students_from_json};
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -12,18 +12,7 @@ pub fn home() -> Html {
     const DEFAULT: &str = "???";
     let selected_student = use_state(|| String::from(DEFAULT));
 
-    let students = use_state(|| vec![]);
-    {
-        let students = students.clone();
-        use_effect_with_deps(move |_| {
-            let students = students.clone();
-            wasm_bindgen_futures::spawn_local(async move {
-                let fetched_students = scrape_students().await;
-                students.set(fetched_students);
-            });
-            || () 
-        }, ());
-    }
+    let students: Vec<Student> = read_students_from_json();
 
     let select_random_student = {
         // Check if the students have been fetched yet

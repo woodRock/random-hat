@@ -1,5 +1,5 @@
 // Students - `student.rs`
-use crate::models::student::{Student,scrape_students};
+use crate::models::student::{Student,read_students_from_json};
 use crate::components::return_home::ReturnHome;
 
 use yew::prelude::*;
@@ -34,18 +34,7 @@ fn student_list(StudentsListProps { students }: &StudentsListProps) -> Html {
 #[function_component(Students)]
 pub fn students() -> Html {
 
-    let students = use_state(|| vec![]);
-    {
-        let students = students.clone();
-        use_effect_with_deps(move |_| {
-            let students = students.clone();
-            wasm_bindgen_futures::spawn_local(async move {
-                let fetched_students = scrape_students().await;
-                students.set(fetched_students);
-            });
-            || () 
-        }, ());
-    }
+    let students: Vec<Student> = read_students_from_json();
 
     html! {
         <>    
@@ -59,7 +48,7 @@ pub fn students() -> Html {
                 { " website."}    
             </div>
             <hr/>
-            <StudentsList students={(*students).clone()} />
+            <StudentsList students={students} />
             <hr/>
             <footer>
                 <ReturnHome />
