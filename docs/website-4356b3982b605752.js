@@ -724,7 +724,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('website-1a618d83f841b46f_bg.wasm', import.meta.url);
+        input = new URL('website-4356b3982b605752_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
