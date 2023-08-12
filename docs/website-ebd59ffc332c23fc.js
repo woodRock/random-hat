@@ -223,7 +223,7 @@ function addBorrowedObject(obj) {
 }
 function __wbg_adapter_28(arg0, arg1, arg2) {
     try {
-        wasm._dyn_core__ops__function__FnMut___A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h25110050163f5232(arg0, arg1, addBorrowedObject(arg2));
+        wasm._dyn_core__ops__function__FnMut___A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h45d3eae2062e9272(arg0, arg1, addBorrowedObject(arg2));
     } finally {
         heap[stack_pointer++] = undefined;
     }
@@ -251,7 +251,7 @@ function makeClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_31(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__Fn__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h908937d520cc7312(arg0, arg1, addHeapObject(arg2));
+    wasm._dyn_core__ops__function__Fn__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hc3d44ccf78e12eaf(arg0, arg1, addHeapObject(arg2));
 }
 
 function handleError(f, args) {
@@ -676,11 +676,11 @@ function __wbg_get_imports() {
         const ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper622 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper621 = function(arg0, arg1, arg2) {
         const ret = makeMutClosure(arg0, arg1, 291, __wbg_adapter_28);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper845 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper844 = function(arg0, arg1, arg2) {
         const ret = makeClosure(arg0, arg1, 394, __wbg_adapter_31);
         return addHeapObject(ret);
     };
@@ -724,7 +724,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('website-4966733ce333ce7_bg.wasm', import.meta.url);
+        input = new URL('website-ebd59ffc332c23fc_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
