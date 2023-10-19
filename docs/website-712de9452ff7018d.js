@@ -223,7 +223,7 @@ function addBorrowedObject(obj) {
 }
 function __wbg_adapter_28(arg0, arg1, arg2) {
     try {
-        wasm.wasm_bindgen__convert__closures__invoke1_mut_ref__h403c3a126fab65e0(arg0, arg1, addBorrowedObject(arg2));
+        wasm.wasm_bindgen__convert__closures__invoke1_mut_ref__h3d3f28c6e2dcf885(arg0, arg1, addBorrowedObject(arg2));
     } finally {
         heap[stack_pointer++] = undefined;
     }
@@ -251,7 +251,7 @@ function makeClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_31(arg0, arg1, arg2) {
-    wasm.wasm_bindgen__convert__closures__invoke1__ha3b5deb036dcfae1(arg0, arg1, addHeapObject(arg2));
+    wasm.wasm_bindgen__convert__closures__invoke1__h4f7a6aaa4a889642(arg0, arg1, addHeapObject(arg2));
 }
 
 function handleError(f, args) {
@@ -680,7 +680,7 @@ function __wbg_get_imports() {
         const ret = makeMutClosure(arg0, arg1, 385, __wbg_adapter_28);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper878 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper898 = function(arg0, arg1, arg2) {
         const ret = makeClosure(arg0, arg1, 411, __wbg_adapter_31);
         return addHeapObject(ret);
     };
@@ -724,7 +724,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('website-c2620a16a880263a_bg.wasm', import.meta.url);
+        input = new URL('website-712de9452ff7018d_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
