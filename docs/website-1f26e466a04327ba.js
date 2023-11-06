@@ -223,7 +223,7 @@ function addBorrowedObject(obj) {
 }
 function __wbg_adapter_28(arg0, arg1, arg2) {
     try {
-        wasm.wasm_bindgen__convert__closures__invoke1_mut_ref__h6255c5157fc1fe93(arg0, arg1, addBorrowedObject(arg2));
+        wasm.wasm_bindgen__convert__closures__invoke1_mut_ref__h9eea65a084f69fa0(arg0, arg1, addBorrowedObject(arg2));
     } finally {
         heap[stack_pointer++] = undefined;
     }
@@ -251,7 +251,7 @@ function makeClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_31(arg0, arg1, arg2) {
-    wasm._dyn_core__ops__function__Fn__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hcca8c74d3b03376a(arg0, arg1, addHeapObject(arg2));
+    wasm._dyn_core__ops__function__Fn__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__hf4c84452c8bfde9f(arg0, arg1, addHeapObject(arg2));
 }
 
 function handleError(f, args) {
@@ -676,12 +676,12 @@ function __wbg_get_imports() {
         const ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper759 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 384, __wbg_adapter_28);
+    imports.wbg.__wbindgen_closure_wrapper760 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 385, __wbg_adapter_28);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper860 = function(arg0, arg1, arg2) {
-        const ret = makeClosure(arg0, arg1, 397, __wbg_adapter_31);
+    imports.wbg.__wbindgen_closure_wrapper859 = function(arg0, arg1, arg2) {
+        const ret = makeClosure(arg0, arg1, 399, __wbg_adapter_31);
         return addHeapObject(ret);
     };
 
@@ -724,7 +724,7 @@ async function __wbg_init(input) {
     if (wasm !== undefined) return wasm;
 
     if (typeof input === 'undefined') {
-        input = new URL('website-8dc33f02deff2190_bg.wasm', import.meta.url);
+        input = new URL('website-1f26e466a04327ba_bg.wasm', import.meta.url);
     }
     const imports = __wbg_get_imports();
 
