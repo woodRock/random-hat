@@ -8,6 +8,10 @@ copy_404:
 	@echo "Copying 404.html 📋"
 	@cp 404.html docs/
 
+copy_Index:
+	@echo "Copying index.html 📋"
+	@cp public/index.html docs/
+
 format: 
 	@echo "Format 🧹"
 	@cargo fmt --all -- --check
