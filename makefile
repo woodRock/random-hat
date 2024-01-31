@@ -1,4 +1,4 @@
-all: build_release copy_404 copy_index
+all: build_release copy_404
 
 build_release: 
 	@echo "Building release 🔧"
@@ -7,10 +7,6 @@ build_release:
 copy_404:
 	@echo "Copying 404.html 📋"
 	@cp 404.html docs/
-
-copy_index:
-	@echo "Copying index.html 📋"
-	@cp public/index.html docs/
 
 format: 
 	@echo "Format 🧹"

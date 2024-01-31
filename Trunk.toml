@@ -18,4 +18,4 @@ release = true
 # The output directory for build assets. 
 dist = "docs"
 # The public URL from which assets are to be served
-public_url = "/"
+public_url = "/random-hat/"
